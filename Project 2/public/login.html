@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <!-- materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- google material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/containersize.css">
+  <style>
+  </style>
+  <title>ComicCol</title>
+  <link rel="icon" 
+        type="image/jpg" 
+        href="./assets/image/project2icon.png"/>
+</head>
+
+<body class="gunmetal">
+  
+  <!-- nav -->
+  <nav>
+    <div class="nav-wrapper blue-grey darken-4">
+      <a href="/index.html" class="brand-logo center">ComicCol</a>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li>
+          <btn href="#" data-target="slide-out" class="sidenav-trigger">Menu</btn>
+        </li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/mylist.html">My List</a></li>
+        <li><a href="/search.html">Search</a></li>
+      </ul>
+  
+      <ul id="nav-mobile" class="right hide-on-med-and-down login-logout">
+        <!-- change log in or log out based on user status -->
+        <!-- LOGIN BUTTON ID: 'login' -->
+        <li>
+          <div class="inv">
+            <a id="login" href="login.html">Log In</a>
+          </div>
+          <div class="inv">
+            <a id="logout" href="login.html">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- side nav -->
+  <ul id="slide-out" class="sidenav">
+    <li><a class="waves-effect" href="/index.html">Home</a></li>
+    <li><a class="waves-effect" href="/mylist.html">My List</a></li>
+    <li><a class="waves-effect" href="/search.html">Search</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">User Validation</a></li>
+    <li><a class="waves-effect" href="login.html">Log In</a></li>
+    <li><a class="waves-effect" href="login.html">Log Out</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="waves-effect modal-trigger" href="#modal6">Feedback</a></li>
+  </ul>
+
+  <!-- MODAL FOR FEEDBACK BUTTON ON SIDE NAV -->
+  <div id="modal6" class="modal blue-grey darken-4 rounded-corners my-modal" style="width: 30% !important;">
+    <div class="modal-content card horizontal blue-grey darken-4 remove-bottom-margin remove-top-margin">
+      <div class="row">
+        <h6 class="white-text">We'd like to hear what you have to say!</h6>
+        <form>
+          <div class="input-field">
+            <label for="feedback" style="margin-left: 5%;">Give us feedback!</label>
+            <textarea name="feedback" id="feedback" class="textWhite" cols="30" rows="10"></textarea>
+          </div>
+          <button id="feedbackSubmit" class="modal-close btn waves-effect waves-light blue-grey" type="submit" name="action">Send
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- adjust header based on screen size! -->
+  <!-- header -->
+  <header class="section no-pad-bot" id="index-banner">
+    <section class="container">
+      <h1 class="header center white-text">Comic Collection</h1>
+      <div class="row center">
+        <h5 class="header col s12 light white-text">Log in to manage your comic collection!</h5>
+      </div>
+      <br><br>
+    </section>
+  </header>
+
+
+  <!-- TLDR:  -->
+  <!-- username text input id: 'username' -->
+  <!-- password text input id: 'password' -->
+  <!-- login button id: 'submitLogIn' => should create a post request for user authentication to recieve jwt -->
+  <!-- sign up button id: 'submitSignUp' => should redirect to /register DONE -->
+  <!-- make sure you use ./public/js/login.js -->
+  <br>
+  <!-- CONTENT -->
+  <main class="container">
+    <div class="row">
+      <!-- padding div -->
+      <div class="col s2"></div>
+      <div class="col s8">
+        <div id="authContainer" class="container">
+          <!-- LOGIN CARD -->
+          <div class="card blue-grey darken-3 rounded-corners">
+            <div class="card-content white-text">
+              <span class="card-title center">Log In</span>
+
+              <!-- LOGIN FORM -->
+              <form>
+                <!-- USERNAME -->
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="username" type="text" class="validate textWhite">
+                    <label for="username">Username</label>
+                  </div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                  <div class="input-field col s12">
+                    <input id="password" type="password" class="validate textWhite">
+                    <label for="password">Password</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <!-- padding div -->
+                  <div class="col s2"></div>
+                  <div class="col s8">
+                    <p class = "tiny-text">Beware of phishing sites pretending to be ComicCol. Always check before entering your password.</p>
+                  </div>
+                  <div class="col s2"></div>
+                </div>
+                <br>
+                <div class="card-action center">
+                  <!-- buttons go here -->
+                  <p><button id="submitLogIn" class="btn-large waves-effect waves-light cadet rounded-corners">Log In</button></p>
+                  <br><br>
+                  <p><a href="register.html" id="submitSignUp" class="btn waves-effect waves-light blue-grey darken-4 rounded-corners">Sign Up</a></p>
+                </div>
+              </form>
+              <!-- END OF FORM -->
+
+            </div>
+          </div>
+          <!-- END LOGIN CARD -->
+        </div>
+      </div>
+      <!-- padding div -->
+      <div class="col s2"></div>
+    </div>
+  </main>
+
+
+  <!-- parallax + footer -->
+  <div class="parallax-container">
+    <div class="parallax"><img src="./assets/image/header.jpg"></div>
+  </div>
+  <div class="section footerColor" style="padding-top: 2%;">
+    <div class="row container">
+      <!-- padding div -->
+      <div class="col s1"></div>
+      <!-- contact stuff! -->
+      <div class="col s3">
+        <h5 class="white-text my-h5">Connect with us:</h5>
+        <p class = "white-text">Get to know our devs a little better!</p>
+      </div>
+      <div class="col s1">
+        <h5 class="white-text my-h5">GitHub:</h5>
+        <p>
+          <a href="https://github.com/CharlotteFrancis" class="white-text" style="text-decoration: underline;">Charlotte</a>
+        </p>
+        <p>
+          <a href="https://github.com/alwayssmellitfirst" class="white-text" style="text-decoration: underline;">Jacob</a>
+        </p>
+        <p>
+          <a href="https://github.com/DeviantSchemist" class="white-text" style="text-decoration: underline;">Michael</a>
+        </p>
+        <p>
+          <a href="https://github.com/bronsonsoda" class="white-text" style="text-decoration: underline;">Bronson</a>
+        </p>
+      </div>
+      <div class="col s4">
+        <!-- DO NOT FIX THIS h5 TAG IT HAS AN INVISIBLE ASCII CHARACTER IN IT, ITS INTENTIONAL -->
+        <h5 class="white-text my-h5">‌‌ 
+        </h5>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/CharlotteFrancis"> Follow @CharlotteFrancis</a>
+        </p>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/alwayssmellitfirst"> Follow @alwayssmellitfirst</a>
+        </p>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/DeviantSchemist"> Follow @DeviantSchemist</a>
+        </p>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/bronsonsoda"> Follow @bronsonsoda</a>
+        </p>
+      </div>
+      <div class="col s2">
+        <h5 class="white-text my-h5">Cool links:</h5>
+        <p>
+          <a href="https://github.com/CharlotteFrancis/ComicCol" class="white-text" style="text-decoration: underline;">Our GitHub Repository</a>
+        </p>
+        <p>
+          <a class="github-button" href="https://github.com/CharlotteFrancis/ComicCol" data-icon="octicon-star" aria-label="Star CharlotteFrancis/ComicCol on GitHub">Star</a>
+        </p>
+        <p>
+          <a class="github-button" href="https://github.com/CharlotteFrancis/ComicCol/subscription" data-icon="octicon-eye" aria-label="Watch CharlotteFrancis/ComicCol on GitHub">Watch</a>
+        </p>
+        <p>
+          <a href="https://www.marvel.com/comics/creators/758/leinil_francis_yu" class="white-text" style="text-decoration: underline;">Header Artist: Leinil Yu</a>
+        </p>
+        <p>
+          <a href="https://comicvine.gamespot.com/" class="white-text" style="text-decoration: underline;">Comic Api: ComicVine</a>
+        </p>
+      </div>
+      <!-- padding div -->
+      <div class="col s1"></div>
+    </div>
+    <br>
+    <hr>
+    <div class="row container">
+      <br>
+      <!-- padding div -->
+      <div class="col s1"></div>
+      <div class="col s11">
+        <p class="white-text">© 2021 Charlotte Wong, Jacob Zavita, Michael Ngo, Bronson Perez</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- materialize sidenav -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav')
+      var instances = M.Sidenav.init(elems)
+    });
+  </script>
+  <!-- materialize carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel')
+      var instances = M.Carousel.init(elems)
+    });
+  </script>
+  <!-- materialize parallax -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, {});
+    });
+  </script>
+
+  <!-- gitHub button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- our js -->
+  <script src="./assets/js/login.js"></script>
+  <!-- navbar js -->
+  <script src="./assets/js/navbar.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>

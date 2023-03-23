@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <!-- materialize -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- google material icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/containersize.css">
+  <link rel="stylesheet" href="./assets/css/mobilemodals.css">
+  <style>
+  </style>
+  <title>ComicCol</title>
+  <link rel="icon" 
+        type="image/jpg" 
+        href="./assets/image/project2icon.png"/>
+</head>
+
+<body class="gunmetal">
+  
+  <!-- nav -->
+  <nav>
+    <div class="nav-wrapper blue-grey darken-4">
+      <a href="/index.html" class="brand-logo center">ComicCol</a>
+      <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li>
+          <btn href="#" data-target="slide-out" class="sidenav-trigger">Menu</btn>
+        </li>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/mylist.html">My List</a></li>
+        <li><a href="/search.html">Search</a></li>
+      </ul>
+  
+      <ul id="nav-mobile" class="right hide-on-med-and-down login-logout">
+        <!-- change log in or log out based on user status -->
+        <!-- LOGIN BUTTON ID: 'login' -->
+        <li>
+          <div class="inv">
+            <a id="login" href="login.html">Log In</a>
+          </div>
+          <div class="inv">
+            <a id="logout" href="login.html">Log Out</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- side nav -->
+  <ul id="slide-out" class="sidenav">
+    <li><a class="waves-effect" href="/index.html">Home</a></li>
+    <li><a class="waves-effect" href="/mylist.html">My List</a></li>
+    <li><a class="waves-effect" href="/search.html">Search</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">User Validation</a></li>
+    <li><a class="waves-effect" href="login.html">Log In</a></li>
+    <li><a class="waves-effect" href="login.html">Log Out</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="waves-effect modal-trigger" href="#modal6">Feedback</a></li>
+  </ul>
+
+  <!-- MODAL FOR FEEDBACK BUTTON ON SIDE NAV -->
+  <div id="modal6" class="modal blue-grey darken-4 rounded-corners my-modal" style="width: 30% !important;">
+    <div class="modal-content card horizontal blue-grey darken-4 remove-bottom-margin remove-top-margin">
+      <div class="row">
+        <h6 class="white-text">We'd like to hear what you have to say!</h6>
+        <form>
+          <div class="input-field">
+            <label for="feedback" style="margin-left: 5%;">Give us feedback!</label>
+            <textarea name="feedback" id="feedback" class="textWhite" cols="30" rows="10"></textarea>
+          </div>
+          <button id="feedbackSubmit" class="modal-close btn waves-effect waves-light blue-grey" type="submit" name="action">Send
+            <i class="material-icons right">send</i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- adjust header based on screen size! -->
+  <!-- header -->
+  <header class="section no-pad-bot" id="index-banner">
+    <section class="container">
+      <h1 class="header center white-text">Comic Collection</h1>
+      <div class="row center">
+        <h5 class="header col s12 light white-text">Showcase your comic collection and share with friends!</h5>
+      </div>
+      <br><br>
+    </section>
+  </header>
+
+  <!-- TLDR: -->
+  <!-- tablebody for comics id: 'comicList' -->
+
+  <!-- CONTENT -->
+  <!-- LIST CONTAINER THING -->
+  <div class="row remove-bottom-margin">
+      <div class="blue-grey darken-3 col s12">
+        <br>
+        <div class="container list-container">
+          <!-- Collection for header -->
+          <ul class="collection list-collection black-border">
+            <!-- TITLE -->
+            <li class="collection-item list-title white-text center"><h5>Comic List</h5></li>
+          </ul>
+          <!-- scrolling table for mobile -->
+          <div class= "scrolling-wrapper">
+            <!-- item table -->
+          <table class="striped centered list-border">
+            <!-- TABLE HEAD -->
+            <thead>
+              <!-- COVER -- COMIC TITLE -- ISSUE -- ISSUE NAME-- SCORE -- PROGRESS -->
+              <tr class=""> 
+                  <th class="list-th">Cover</th>
+                  <th class="list-th">Title</th>
+                  <th class="list-th">Issue</th>
+                  <th class="list-th">Name</th>
+                  <th class="list-th">Score</th>
+                  <th class="list-th">Progress</th>
+                  <th class="list-th">Update</th>
+              </tr>
+            </thead>
+            <!-- TABLE BODY -->
+            <tbody id= "comicList">
+              <tr>
+                <td class="list-td"><img class="list-cover" src="https://comicvine.gamespot.com/a/uploads/scale_avatar/6/67663/6686014-07.jpg" alt="cover"></td>
+                <td class="list-td">Scarlet Witch</td>
+                <td class="list-td">15</td>
+                <td class="list-td">null</td>
+                <td class="list-td">8 / 10</td>
+                <td class="list-td">Complete</td>
+                <td class="list-td"><a href="#modal1" data-id="1" class="btn waves-effect edit waves-light blue-grey darken-2 rounded-corners modal-trigger"><i class="far fa-edit my-trigger"></i></a></td>
+                <!-- data-id should contain the id of the ComicList. -->
+              </tr>
+              <tr>
+                <td class="list-td"><img class="list-cover" src="https://comicvine.gamespot.com/a/uploads/scale_medium/6/67663/4354933-04.jpg" alt="cover"></td>
+                <td class="list-td">Thor</td>
+                <td class="list-td">4</td>
+                <td class="list-td">Thor Vs. Thor</td>
+                <td class="list-td">7 / 10</td>
+                <td class="list-td">In Progress</td>
+                <td class="list-td"><a href="#modal1" data-id="2" class="btn waves-effect edit waves-light blue-grey darken-2 rounded-corners modal-trigger"><i class="far fa-edit my-trigger"></i></a></td>
+              </tr>
+              <tr>
+                <td class="list-td"><img class="list-cover" src="https://comicvine.gamespot.com/a/uploads/scale_medium/6/67663/7607019-49.jpg" alt="cover"></td>
+                <td class="list-td">The Amazing Spider-Man</td>
+                <td class="list-td">49</td>
+                <td class="list-td">The Green Goblin Is Back</td>
+                <td class="list-td">null / 10</td>
+                <td class="list-td">Plan to Read</td>
+                <td class="list-td"><a href="#modal1" data-id="1" class="btn waves-effect edit waves-light blue-grey darken-2 rounded-corners modal-trigger"><i class="far fa-edit my-trigger"></i></a></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <br>
+      </div>
+  </div>
+
+  <!-- MODAL -->
+  <!--mobile-modal is resizing the modal for mobile devices-->
+  <div id="modal1" class="modal mobile-modal">
+    <div class="modal-content">
+      <blockquote style="margin-bottom: 5px; border-color: #263238;">
+      <h5 id="modalTitle"></h5>
+      <hr style="width: 35%; display: block;" class="left">
+      <br>
+      <p id="modalIssueNumber" style="font-size: smaller; display: inline;"></p>
+      <p style="display: inline; font-size:small">·</p>
+      <p id="modalIssueName" style="font-size: smaller; display: inline;"></p>
+      <br><br>
+        <!-- <br> -->
+        <!-- RATING -->
+        <p style="font-size: small; text-align: left;">
+           Rating: <div class="input-field inline">
+             <select id="rating">
+              <option value="" disabled selected>Rating</option>
+              <option value="10">(10) Perfect</option>
+              <option value="9">(9) Amazing</option>
+              <option value="8">(8) Great</option>
+              <option value="7">(7) Good</option>
+              <option value="6">(6) Fine</option>
+              <option value="5">(5) Average</option>
+              <option value="4">(4) Bad</option>
+              <option value="3">(3) Awful</option>
+              <option value="2">(2) Appaling</option>
+              <option value="1">(1) Litteral Dog Water</option>
+            </select> 
+          </div>
+        </p>
+        <!-- COMPLETION STATUS -->
+        <p style="font-size: small; text-align: left;">
+           Read Status: <div class="input-field inline">
+             <select id="completion">
+              <option value="" disabled selected>Read Status</option>
+              <option value="Completed">Completed</option>
+              <option value="Currently Reading">Currently Reading</option>
+              <option value="Plan to Read">Plan to Read</option>
+            </select> 
+          </div>
+        </p>
+        <!-- <br> -->
+      </blockquote>
+    </div>
+    <div class="modal-footer blue-grey darken-4">
+      <a data-id="" id="updateFromModal" href="#!" class="modal-close waves-effect waves-red btn-flat white-text">Update</a>
+      <a href="#!" id="deleteFromModal" class="modal-close waves-effect waves-green btn-flat white-text">Delete</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat white-text">Close</a>
+    </div>
+  </div>
+  <!-- End of modal -->
+  
+
+
+
+
+
+  <!-- parallax + footer -->
+  <div class="parallax-container">
+    <div class="parallax"><img src="./assets/image/header.jpg"></div>
+  </div>
+  <div class="section footerColor" style="padding-top: 2%;">
+    <div class="row container">
+      <!-- padding div -->
+      <div class="col s1"></div>
+      <!-- contact stuff! -->
+      <div class="col s3">
+        <h5 class="white-text my-h5">Connect with us:</h5>
+        <p class = "white-text">Get to know our devs a little better!</p>
+      </div>
+      <div class="col s1">
+        <h5 class="white-text my-h5">GitHub:</h5>
+        <p>
+          <a href="https://github.com/CharlotteFrancis" class="white-text" style="text-decoration: underline;">Charlotte</a>
+        </p>
+        <p>
+          <a href="https://github.com/alwayssmellitfirst" class="white-text" style="text-decoration: underline;">Jacob</a>
+        </p>
+        <p>
+          <a href="https://github.com/DeviantSchemist" class="white-text" style="text-decoration: underline;">Michael</a>
+        </p>
+        <p>
+          <a href="https://github.com/bronsonsoda" class="white-text" style="text-decoration: underline;">Bronson</a>
+        </p>
+      </div>
+      <div class="col s4">
+        <!-- DO NOT FIX THIS h5 TAG IT HAS AN INVISIBLE ASCII CHARACTER IN IT, ITS INTENTIONAL -->
+        <h5 class="white-text my-h5">‌‌ 
+        </h5>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/CharlotteFrancis"> Follow @CharlotteFrancis</a>
+        </p>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/alwayssmellitfirst"> Follow @alwayssmellitfirst</a>
+        </p>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/DeviantSchemist"> Follow @DeviantSchemist</a>
+        </p>
+        <p class="hide-on-med-and-down">
+          <a class="github-button" href="https://github.com/bronsonsoda"> Follow @bronsonsoda</a>
+        </p>
+      </div>
+      <div class="col s2">
+        <h5 class="white-text my-h5">Cool links:</h5>
+        <p>
+          <a href="https://github.com/CharlotteFrancis/ComicCol" class="white-text" style="text-decoration: underline;">Our GitHub Repository</a>
+        </p>
+        <p>
+          <a class="github-button" href="https://github.com/CharlotteFrancis/ComicCol" data-icon="octicon-star" aria-label="Star CharlotteFrancis/ComicCol on GitHub">Star</a>
+        </p>
+        <p>
+          <a class="github-button" href="https://github.com/CharlotteFrancis/ComicCol/subscription" data-icon="octicon-eye" aria-label="Watch CharlotteFrancis/ComicCol on GitHub">Watch</a>
+        </p>
+        <p>
+          <a href="https://www.marvel.com/comics/creators/758/leinil_francis_yu" class="white-text" style="text-decoration: underline;">Header Artist: Leinil Yu</a>
+        </p>
+        <p>
+          <a href="https://comicvine.gamespot.com/" class="white-text" style="text-decoration: underline;">Comic Api: ComicVine</a>
+        </p>
+      </div>
+      <!-- padding div -->
+      <div class="col s1"></div>
+    </div>
+    <br>
+    <hr>
+    <div class="row container">
+      <br>
+      <!-- padding div -->
+      <div class="col s1"></div>
+      <div class="col s11">
+        <p class="white-text">© 2021 Charlotte Wong, Jacob Zavita, Michael Ngo, Bronson Perez</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- materialize sidenav -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.sidenav')
+      var instances = M.Sidenav.init(elems)
+    });
+  </script>
+  <!-- materialize carousel -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.carousel')
+      var instances = M.Carousel.init(elems)
+    });
+  </script>
+  <!-- materialize parallax -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, {});
+    });
+  </script>
+  <!-- materialize modal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal')
+    var instances = M.Modal.init(elems)
+  })
+  </script>
+  <!-- materialize select -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems);
+  });
+  </script>
+
+  <!-- gitHub button -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- axios -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- our js -->
+  <script src="./assets/js/mylist.js"></script>
+  <!-- navbar js -->
+  <script src="./assets/js/navbar.js"></script>
+  <script>
+
+  </script>
+</body>
+
+</html>

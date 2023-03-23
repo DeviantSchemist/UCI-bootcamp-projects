@@ -1,0 +1,243 @@
+/* MAIN STUFF */
+
+.no-border {
+  border-color: transparent !important;
+}
+
+/* modal */
+
+.my-modal {
+  overflow-y: hidden;
+}
+
+.modal-image-height {
+  height: 450px;
+}
+
+/* nav bar */
+
+.inv {
+  display: none;
+}
+
+/* header */
+
+#index-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.651)), url("../image/header.jpg");
+}
+
+/* footer */
+
+/* header */
+
+#footer-banner {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.747), rgba(0, 0, 0, 0.651)), url("../image/header2.jpg");
+}
+
+.inline {
+  display: inline;
+}
+
+/* carousel */
+
+.carousel .carousel-item {
+  /* add sizing here with !important */
+  width: 20% !important;
+  height: 70% !important;
+}
+
+/* overflow visible to remove cutoff */
+
+.carousel {
+  overflow: visible !important;
+  margin-left: -1%;
+}
+
+/* card collection style */
+
+.collection .collection-item {
+  background-color: #253237;
+}
+
+/* footer color */
+
+.footerColor {
+  background-color: #243447;
+}
+
+/* END MAIN STUFF */
+
+/* MOBILE STUFF */
+
+/* .modal {
+  width: 60%;
+  overflow: visible;
+}
+.modal-review{
+  height: 200px;
+}
+@media screen and (max-width: 650px) {
+  .scrolling-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .mobile-modal {
+    width: 80%;
+    overflow: visible;
+  }
+  .mobile-review-modal {
+    height: 100px;
+  }
+} */
+
+/* END MOBILE STUFF */
+
+/* AUTH STUFF */
+
+/* Small text */
+
+.tiny-text, p.tiny-text {
+  font-size: small !important;
+  text-align: center;
+}
+
+/* Styling on Auth containers */
+
+.rounded-corners {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+/* END AUTH STUFF */
+
+/* LIST STUFF */
+
+.colorBorder {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.remove-bottom-margin {
+  margin-bottom: 0px;
+}
+
+.remove-top-margin {
+  margin-top: 0px;
+}
+
+.black-border {
+  border: 1px solid #262626 !important;
+}
+
+.list-border {
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #262626;
+}
+
+/* th {
+  font-weight: 300;
+  font-size: large;
+  color: #fff !important;
+}
+
+td {
+  color: #fff !important;
+  padding: 5px;
+}  */
+
+.z-align {
+  /* for spinner */
+}
+
+/* made specific td and th classes to not interfere with other pages */
+
+td.list-td, list-td {
+  color: #fff !important;
+  padding: 5px;
+}
+
+.list-th {
+  font-weight: 300;
+  font-size: large;
+  color: #fff !important;
+}
+
+.list-cover {
+  height: 90px;
+  width: 60px;
+}
+
+.list-collection {
+  margin-bottom: 0;
+}
+
+/* table stripes color */
+
+table.striped>tbody>tr:nth-child(odd) {
+  background-color: rgb(0 0 0 / 50%);
+}
+
+/* END LIST STUFF */
+
+/* SEARCH STUFF */
+
+.small-text {
+  font-size: small;
+}
+
+.search-card-height {
+  height: 325px;
+}
+
+.search-card-width {
+  height: 375px;
+}
+
+/* END SEARCH STUFF */
+
+/* PALLETE STUFF */
+
+.floralWhite {
+  background-color: #FFFCF2;
+}
+
+.lightCyan {
+  background-color: #e0fbfc;
+}
+
+.powderBlue {
+  background-color: #c2dfe3;
+}
+
+.pewterBlue {
+  background-color: #9db4c0;
+}
+
+.cadet {
+  background-color: #5c6b73;
+}
+
+/* blue-grey darken-4 */
+
+.gunmetal {
+  background-color: #253237;
+}
+
+.textBlack {
+  color: #252422;
+}
+
+.textWhite {
+  color: #FFFCF2 !important;
+}
